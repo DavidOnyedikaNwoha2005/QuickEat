@@ -1,0 +1,186 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+:root{
+    --padding:2rem 5rem;
+    --orange: rgb(255, 133, 34);
+    --brown: #363636;
+    --box-shadow: 0px -1px 30px 4px rgba(0, 0, 0, 0.051);
+}
+.landing-page{
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+    gap: 6rem;
+}
+.landing-page> .top{
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: var(--brown);
+}
+.landing-page> .bottom{
+    display: flex;
+    margin: 0%;
+    flex-direction: row;
+    
+    justify-content: space-between;
+}
+.landing-page> .bottom> .food-list{
+    display: flex;
+    flex-direction: column;
+}
+.landing-page> .bottom> .food-list> .food{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: .5px solid var(--brown);
+    gap: 5rem;
+    padding: 1rem;
+}
+.landing-page> .bottom> .food-list> .food> .text h2{
+    color: var(--brown);
+    font-weight: 100;
+}
+.landing-page> .bottom> .food-list> .food .amount h2{
+    font-weight: 100;
+    color: var(--orange);
+}
+.landing-page> .bottom> .food-list> .food> .amount-plus{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.landing-page> .bottom> .food-list> .food> .amount-plus i{
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    padding: .8rem;
+    border-radius: 5px;
+}
+.landing-page> .bottom> .food-list> .food i:hover{
+    background-color: var(--orange);
+    color: white;
+    cursor: pointer;
+}
+.landing-page> .bottom> .food-list> .food .fa-xmark{
+    padding: 1rem;
+    border-radius: 5px;
+}
+.price-cont{
+    box-shadow: var(--box-shadow);
+    padding: 1rem 1rem;
+    position: fixed;
+    right: 30px;
+    height:fit-content;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: sans-serif;
+}
+.price-cont> .header{
+    text-align: center;
+    font-family: sans-serif;
+
+}
+.price-cont> h2{
+    font-weight: 100;
+}
+.price-cont> h2 span{
+    margin-left: 70px;
+}
+.price-cont> h2 .price{
+    color:orange;
+    font-weight: 1000;
+    font-size: 25px;
+}
+.landing-page> .bottom> .food-list> .food img{
+    width: 180px;
+}
+.price-cont> a{
+    text-decoration: none;
+    background-color:orange;
+    text-align: center;
+    padding: .5rem;
+    color: white;
+    border-radius: 5px;
+}
+
+.back-btn a{
+    text-decoration: none;
+    color: white;
+    position: fixed;
+    background:var(--orange);
+    bottom: 20px;
+    right: 0px;
+    margin-right: 50px;
+    padding: 1rem;
+    color: white;
+    border-radius: 6px;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+}
+.back-btn a:hover{
+    background-color: transparent;
+    color: var(--orange);
+    border: 2px solid var(--orange);
+}
+.back-btn i{
+    position: relative;
+    padding-right: 10px;
+    animation-name: display;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes display {
+    0%{display: none; right: 0px; padding-right: 0%;}
+    50%{display: inline; right: 10px; padding-right: 8px;}
+    100%{display: none; right: 0px; padding-right: 0px;}
+}
+@media (max-width:850px) {
+    .landing-page> .bottom{
+        flex-direction: column !important;
+        gap: 2rem;
+    }   
+    .bottom{
+        justify-content: center;
+        align-items: center;
+    }
+    .price-cont{
+        position: relative;
+    }
+    .food{
+        width: 100% !important;
+        
+        gap: 0px;
+        justify-content: space-around !important;
+    }
+    .landing-page> .bottom> .food-list> .food img{
+        width: 160px;
+    }
+}
+
+@media (max-width:520px) {
+
+    .food{
+        flex-direction: column !important;
+        gap: 1.9rem !important;
+    }
+    .bottom{
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .landing-page{
+        padding: 0px !important;
+    }
+    .price-cont{
+        position: relative !important;
+        
+    }
+}
