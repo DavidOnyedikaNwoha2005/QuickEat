@@ -42,9 +42,9 @@ function renderitems() {
         const decreamentBtn = cartContainer.querySelector('#substract');
         const deleteBtn = cartContainer.querySelector("#deletBtn")
 
-        increamentBtn.addEventListener('click', handleIncreament(item));
-        decreamentBtn.addEventListener('click', handleDecreament(item));
-        deleteBtn.addEventListener('click', handleDelete(item));
+        increamentBtn.addEventListener('click', handleIncreament(items));
+        decreamentBtn.addEventListener('click', handleDecreament(items));
+        deleteBtn.addEventListener('click', handleDelete(items));
 
         cartItemEl.append(divEl);
 
@@ -85,7 +85,7 @@ function handleDecreament(item) {
 
 function handleDelete(item) {
     const cart_items = getItems();
-    localStorage.setItem("cart-items", JSON.stringify(newCartItems));
+    localStorage.setItem("cart-items", JSON.stringify(cart_items));
     renderitems();
 }
 
