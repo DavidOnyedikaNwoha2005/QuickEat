@@ -656,6 +656,7 @@ sup {
 .services {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: var(--padding);
     flex-direction: column;
     gap: 2rem;
@@ -851,7 +852,7 @@ sup {
     padding: var(--padding);
     background-color: rgb(230, 230, 230);
     gap: 5rem;
-    height: 700px;
+    height: 450px;
 }
 
 .suscribe-container>.suscribe-image img {

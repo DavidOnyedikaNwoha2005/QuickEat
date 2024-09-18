@@ -4,14 +4,14 @@ document.addEventListener('DomContentLoaded', () => {
 
 function renderitems() {
     const cartItems = getItems();
-    // const cartItems_el = document.querySelector(".cart-items");
+    const cartItems_el = document.querySelector(".cart-items");
 
     // LocalStorage
     // const cartItems = JSON.parse(localStorage.getItem("cart-items"))
     const cartItemsEl = document.querySelector('.food-list')
 
     // Clear DOM
-    // cartItems_el.innerHTML = "";
+    cartItems_el.innerHTML = "";
 
     cartItems.forEach((items) => {
         const cartContainer = document.createElement('div')
@@ -56,10 +56,10 @@ function renderitems() {
 
 
 // Item Increament
-function handleIncreament(item) {
+function handleIncreament(items) {
     const cartItems = getItems();
     const newCartItems = cartItems.map((cart_item) => {
-        if (cart_item.id == item.id) {
+        if (cart_item.id == items.id) {
             return { ...cart_item, quantity: cart_item.quantity + 1 }
         } else {
             return cart_item;
@@ -70,7 +70,7 @@ function handleIncreament(item) {
 }
 
 // Item Decreament
-function handleDecreament(item) {
+function handleDecreament(items) {
     const cart_items = getItems();
     const newCartItems = cart_items.map((cart_item) => {
         if (cart_item.id == item.id && cart_item.quantity > 1) {
@@ -83,7 +83,8 @@ function handleDecreament(item) {
     renderitems();
 }
 
-function handleDelete(item) {
+// To deleteItem
+function handleDelete(items) {
     const cart_items = getItems();
     localStorage.setItem("cart-items", JSON.stringify(cart_items));
     renderitems();
